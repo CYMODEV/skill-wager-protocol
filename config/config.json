@@ -1,0 +1,35 @@
+{
+  "protocol_version": "2.1.0",
+  "contract_type": "OmniEscrowRuleset",
+  "game_metadata": {
+    "title": "Super Combat Fighters II",
+    "developer_id": "0xDevWalletAddress123",
+    "rom_hash_sha256": "8f4e3b2a9d8c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e",
+    "platform": "arcade_mame"
+  },
+  "economics": {
+    "currency": "PLAY",
+    "gross_rake_bps": 700,
+    "distribution_bps": {
+      "developer": 200,
+      "venue_node": 200,
+      "treasury_amm": 300
+    }
+  },
+  "constraints": {
+    "topology": "PVP",
+    "min_elo": 0,
+    "max_wager_wei": "100000000000000000000",
+    "synthetic_multiplier": 0.0,
+    "anti_shark_enabled": true
+  },
+  "memory_map": {
+    "p1_health": { "address": "0x00FF1A", "type": "uint8" },
+    "p2_health": { "address": "0x00FF1C", "type": "uint8" },
+    "match_state": { "address": "0x00FF00", "type": "uint8" }
+  },
+  "oracle_triggers": {
+    "on_match_end": "match_state == 2 || match_state == 3",
+    "winner_logic": "if (p1_health > p2_health) return P1_WIN; else if (p2_health > p1_health) return P2_WIN; else return DRAW;"
+  }
+}

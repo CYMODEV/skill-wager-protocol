@@ -1,0 +1,33 @@
+{
+  "name": "skill-wager-protocol",
+  "version": "1.0.0",
+  "description": "L2 Oracle and Edge Compute network for RMG Arcade Esports",
+  "main": "scripts/venue-daemon.js",
+  "scripts": {
+    "start:daemon": "node scripts/venue-daemon.js",
+    "compile": "hardhat compile",
+    "test": "hardhat test"
+  },
+  "keywords": [
+    "web3",
+    "esports",
+    "arcade",
+    "polygon",
+    "solidity"
+  ],
+  "author": "Skill Wager Technologies Inc.",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "ws": "^8.14.2"
+  }
+}
